@@ -249,10 +249,11 @@ func Mount(remote string, remotePath string, targetPath string, configData strin
 	defaultFlags := map[string]string{}
 	defaultFlags["cache-info-age"] = "72h"
 	defaultFlags["cache-chunk-clean-interval"] = "15m"
-	defaultFlags["dir-cache-time"] = "5s"
-	defaultFlags["vfs-cache-mode"] = "writes"
+	defaultFlags["dir-cache-time"] = "15s"
+	defaultFlags["vfs-cache-mode"] = "full"
 	defaultFlags["allow-non-empty"] = "true"
 	defaultFlags["allow-other"] = "true"
+	defaultFlags["buffer-size"] = "2g"
 
 	remoteWithPath := fmt.Sprintf(":%s:%s", remote, remotePath)
 
@@ -268,6 +269,7 @@ func Mount(remote string, remotePath string, targetPath string, configData strin
 		remoteWithPath,
 		targetPath,
 		"--daemon",
+		"--use-server-modtime",
 	)
 
 	// If a custom flag configData is defined,
