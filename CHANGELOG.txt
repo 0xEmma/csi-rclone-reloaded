@@ -1,4 +1,6 @@
 # CHANGELOG
+1.5.1(0xEmma)
+- Change VFS-Cache settings to improve performance
 
 1.4.0 (dvcrn):
 - Merge support for specifying config in secrets: https://github.com/wunderio/csi-rclone/pull/7
