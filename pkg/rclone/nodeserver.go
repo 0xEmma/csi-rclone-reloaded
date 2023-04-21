@@ -268,7 +268,6 @@ func Mount(remote string, remotePath string, targetPath string, configData strin
 		remoteWithPath,
 		targetPath,
 		"--daemon",
-		"--use-server-modtime",
 	)
 
 	// If a custom flag configData is defined,
